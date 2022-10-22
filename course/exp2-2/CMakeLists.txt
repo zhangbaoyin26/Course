@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.21)
-project(DataStructures)
+project(Data_structures_and_algorithms)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DataStructures/course/exp2-2/
-        LinkList.cpp
-        exp2-2.cpp
-        LinkList.h)
+add_executable(DataStructures
+        course/exp2-2/LinkList.cpp
+        course/exp2-2/exp2-2.cpp
+        course/exp2-2/LinkList.h)
