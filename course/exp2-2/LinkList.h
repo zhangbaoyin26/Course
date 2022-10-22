@@ -15,7 +15,7 @@ private:
     }LinkNode;
     LinkNode *L;
 public:
-    LinkList(const char src[], size_t len = 0);
+    explicit LinkList(const char src[] = nullptr, size_t len = 0);
     ~LinkList();
     bool is_ListEmpty();
     size_t listLength();

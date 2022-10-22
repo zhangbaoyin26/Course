@@ -13,8 +13,7 @@ LinkList::LinkList(const char src[], size_t len) {
     catch (std::bad_alloc &e) {
         std::cout << e.what() << std::endl;
     }
-    ptr->next = nullptr;
-    if (len != 0) {
+    if (src != nullptr) {
         ptr->data = src[0];
         for (size_t i = 1; i < len; ++i) {
             try {
@@ -29,6 +28,8 @@ LinkList::LinkList(const char src[], size_t len) {
             }
         }
     }
+    else
+        ptr->next = nullptr;
 }
 
 LinkList::~LinkList() {
@@ -69,8 +70,10 @@ char LinkList::getElem(size_t index) {
     LinkNode *ptr = L;
     while ((ptr != nullptr) and (index != ++i))
         ptr = ptr->next;
-    if (index == ++i)
+    if (index > i) {
         assert("索引值超过链表长度");
+        return -1;
+    }
     return ptr->data;
 }
 
@@ -91,7 +94,7 @@ bool LinkList::listInsert(size_t index, char elem) {
     LinkNode *ptr = L;
     while ((ptr->next != nullptr) and (index != i++))
         ptr = ptr->next;
-    if (index == ++i) {
+    if (index > i) {
         assert("索引值超过链表长度");
         return false;
     }
