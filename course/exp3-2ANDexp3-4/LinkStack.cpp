@@ -60,14 +60,8 @@ void LinkStack::push(char elem){
 }
 
 char LinkStack::pop(){
-    LinkStNode *ptr = L;
+    LinkStNode *ptr;
     char ret;
-    try {
-        ptr = (LinkStNode *) malloc(sizeof(LinkStNode));
-    }
-    catch (std::bad_alloc &e){
-        std::cout << "alloc_err" << std::endl;
-    }
     if (L->next == nullptr){
         ret = -1;
     }
