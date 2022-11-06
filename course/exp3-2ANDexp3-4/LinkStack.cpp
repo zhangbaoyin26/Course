@@ -104,5 +104,4 @@ int main (){
     cout << endl;
     cout << "(6)isStackEmpty?: " << s.isStackEmpty() << endl;
     cout << "(7)~LinkStack()" << endl;
-    s.pop();
 }

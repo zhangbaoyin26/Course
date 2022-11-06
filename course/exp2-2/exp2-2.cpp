@@ -17,7 +17,7 @@ int main(){
     //(5)
     std::cout << "Is_empty?: " << L.is_ListEmpty() << std::endl;
     //(6)
-    std::cout << "Value[3-1]: " << L.getElem(3) << std::endl;
+    std::cout << "Value[3-1]: " << L.getElem(3-1) << std::endl;
     //(7)
     std::cout << "Index(a): " << (int)L.locateElem('a') << std::endl;
     //(8)

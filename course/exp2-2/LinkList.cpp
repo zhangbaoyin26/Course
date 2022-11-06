@@ -68,7 +68,7 @@ void LinkList::displayList() {
 char LinkList::getElem(size_t index) {
     size_t i = 0;
     LinkNode *ptr = L;
-    while ((ptr != nullptr) and (index != ++i))
+    while ((ptr != nullptr) and (index != i++))
         ptr = ptr->next;
     if (index > i) {
         assert("索引值超过链表长度");
@@ -116,11 +116,15 @@ bool LinkList::listInsert(size_t index, char elem) {
 
 bool LinkList::listDelete(char elem) {
     LinkNode *left, *right;
-    left = L, right = L->next;
-    while (right != nullptr)
-        if (right->data == elem)
+    left = L, right = left;
+    while (right != nullptr){
+        if (right->data == elem){
+            right = left->next;
             break;
-    if (right == nullptr)
+        }
+
+    }
+    if (left == nullptr)   //没找到
         return false;
     else {
         left->next = right->next;
